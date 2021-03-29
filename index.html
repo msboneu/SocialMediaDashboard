@@ -3,21 +3,152 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
     <title>Social Media Dashboard</title>
   </head>
   <body>
-    Social Media Dashboard Total Followers: 23,004 Dark Mode @nathanf 1987
-    Followers 12 Today @nathanf 1044 Followers 99 Today @realnathanf 11k
-    Followers 1099 Today Nathan F. 8239 Subscribers 144 Today Overview - Today
-    Page Views 87 3% Likes 52 2% Likes 5462 2257% Profile Views 52k 1375%
-    Retweets 117 303% Likes 507 553% Likes 107 19% Total Views 1407 12%
+    <header class="header"> 
+      <h1 class="header__title">Social Media Dashboard</h1>
+      <div class="header__stats">Total Followers: 23,004</div>
+      <hr class="header__divider">
+      <div class="header__theme--selector">
+        Dark Mode
+        <label class="header__toggle">
+          <input type="checkbox" onclick="toggleTheme()">
+          <span class="header__slider"></span>
+        </label>
+      </div>
+    </header> 
+    <main class="social__stats">
+      <div class="social__stats--fb">
+        <span class="social__stats--domain">
+          <img class="social__stats--sns__icon" src="images/icon-facebook.svg" alt="Facebook icon">
+          @nathanf
+        </span>
+        <span class="social__stats--counter">1987</span>
+        <span class="social__stats--type">Followers</span>
+        <span class="social__stats--variation">
+          <img class="social__stats--variation__icon" id="social__stats--variation__icon" src="images/icon-up.svg" alt="Increase icon">
+          12 Today
+        </span>
+      </div>
+      <div class="social__stats--twt">
+        <span class="social__stats--domain">
+          <img class="social__stats--sns__icon" src="images/icon-twitter.svg" alt="Twitter icon">
+          @nathanf
+        </span>
+        <span class="social__stats--counter">1044</span>
+        <span class="social__stats--type">Followers</span>
+        <span class="social__stats--variation">
+          <img class="social__stats--variation__icon" src="images/icon-up.svg" alt="Increase icon">
+          99 Today
+        </span>
+      </div>
+      <div class="social__stats--insta">
+        <span class="social__stats--instaborder"></span>
+        <span class="social__stats--domain">
+          <img class="social__stats--sns__icon" src="images/icon-instagram.svg" alt="Instagram icon">
+          @realnathanf
+        </span>
+        <span class="social__stats--counter">11k</span>
+        <span class="social__stats--type">Followers</span> 
+        <span class="social__stats--variation">
+          <img class="social__stats--variation__icon" src="images/icon-up.svg" alt="Increase icon">
+          1099 Today
+        </span>
+      </div>
+      <div class="social__stats--yt">
+        <span class="social__stats--domain">
+          <img class="social__stats--sns__icon" src="images/icon-youtube.svg" alt="Youtube icon">
+          Nathan F.
+        </span>
+        <span class="social__stats--counter">8239</span>
+        <span class="social__stats--type">Subscribers</span>
+        <span class="social__stats--variation">
+          <img class="social__stats--variation__icon" src="images/icon-down.svg" alt="Decrease icon">
+          144 Today
+        </span>
+      </div>
+    </main>
+    <section class="social__daily">
+      <h3 class="social__daily--title">Overview - Today</h3>
+      <div class="social__daily--fb__pageviews">
+        <span class="social__daily--kpi">Page Views</span>
+        <span class="social__daily--sns__icon"><img src="images/icon-facebook.svg" alt="Facebook icon"></span>
+        <span class="social__daily--counter">87</span>
+        <span class="social__daily--variation">
+          <img class="social__daily--variation__icon" src="images/icon-up.svg" alt="Increase icon">3%
+        </span>
+      </div>
+      <div class="social__daily--fb__likes">
+        <span class="social__daily--kpi">Likes</span>
+        <span class="social__daily--sns__icon"><img src="images/icon-facebook.svg" alt="Facebook icon"></span>
+        <span class="social__daily--counter">52</span>
+        <span class="social__daily--variation">
+          <img class="social__daily--variation__icon" src="images/icon-down.svg" alt="Decrease icon">2%
+        </span>
+      </div>
+      <div class="social__daily--insta__likes">
+        <span class="social__daily--kpi">Likes</span>
+        <span class="social__daily--sns__icon"><img src="images/icon-instagram.svg" alt="Instagram icon"></span>
+        <span class="social__daily--counter">5462</span>
+        <span class="social__daily--variation">
+          <img class="social__daily--variation__icon" src="images/icon-up.svg" alt="Increase icon">2257%
+        </span>
+      </div>
+      <div class="social__daily--insta__profileviews">
+        <span class="social__daily--kpi">Profile Views</span>
+        <span class="social__daily--sns__icon"><img src="images/icon-instagram.svg" alt="Instagram icon"></span>
+        <span class="social__daily--counter">52k</span>
+        <span class="social__daily--variation">
+          <img class="social__daily--variation__icon" src="images/icon-up.svg" alt="Increase icon">1375%
+        </span>
+      </div>
+      <div class="social__daily--twt__retweets">
+        <span class="social__daily--kpi">Retweets</span>
+        <span class="social__daily--sns__icon"><img src="images/icon-twitter.svg" alt="Twitter icon"></span>
+        <span class="social__daily--counter">117</span>
+        <span class="social__daily--variation">
+          <img class="social__daily--variation__icon" src="images/icon-up.svg" alt="Increase icon">303%
+        </span>
+      </div>
+      <div class="social__daily--twt__likes">
+        <span class="social__daily--kpi">Likes</span>
+        <span class="social__daily--sns__icon"><img src="images/icon-twitter.svg" alt="Twitter icon"></span>
+        <span class="social__daily--counter">507</span>
+        <span class="social__daily--variation">
+          <img class="social__daily--variation__icon" src="images/icon-up.svg" alt="Increase icon">553%
+        </span>
+      </div>
+      <div class="social__daily--yt__likes">
+        <span class="social__daily--kpi">Likes</span>
+        <span class="social__daily--sns__icon"><img src="images/icon-youtube.svg" alt="Youtube icon"></span>
+        <span class="social__daily--counter">107</span>
+        <span class="social__daily--variation">
+          <img class="social__daily--variation__icon" src="images/icon-down.svg" alt="Decrease icon">19%
+        </span>
+      </div>
+      <div class="social__daily--yt__totalviews">
+        <span class="social__daily--kpi">Total Views</span>
+        <span class="social__daily--sns__icon"><img src="images/icon-youtube.svg" alt="Youtube icon"></span>
+        <span class="social__daily--counter">1407</span>
+        <span class="social__daily--variation">
+          <img class="social__daily--variation__icon" src="images/icon-down.svg" alt="Decrease icon">12%
+        </span>
+      </div>
+    </section>
+    <script>
+      function toggleTheme() {
+        const body = document.body;
+        body.classList.toggle("dark");
+      }
+    </script>
   </body>
 </html>
